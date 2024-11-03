@@ -7,7 +7,7 @@ body {
     color: #333;
 }
 .header {
-    background-color: #000000;
+    background-color:  #02011d;
     color: #4c22cb;
     padding: 10px;
     display: flex;
@@ -21,6 +21,27 @@ body {
 .header h1 {
     margin: 0;
     font-size: 1.5em;
+}
+.contains {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+.nav-links li {
+    margin-left: 20px;
+}
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.nav-links a:hover {
+    color: var(--primary-color);
 }
 .container {
     max-width: 1200px;
