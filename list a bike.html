@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List a bike</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <img src="zIppy.jpg" alt="Logo" class="logo">
+        <h1>zIppy</h1>
+    </div>
+
+    <div class="container">
+
+        <!-- Owner Post Bike Form -->
+        <div class="owner-form">
+            <h2>Post Your Bike for Rent</h2>
+            <form>
+                <div class="form-group">
+                    <label for="bikeImage" style="color:#1E3C72;">Bike Image</label>
+                    <input type="file" id="bikeImage" name="bikeImage" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="bikeName" style="color:#1E3C72;">Bike Name</label>
+                    <input type="text" id="bikeName" name="bikeName" placeholder="e.g., Royal Enfield Classic 350">
+                </div>
+                <div class="form-group">
+                    <label for="bikeType"style="color:#1E3C72;">Bike Type</label>
+                    <select id="bikeType" name="bikeType">
+                        <option value="sports">Sports</option>
+                        <option value="cruiser">Cruiser</option>
+                        <option value="scooter">Scooter</option>
+                        <option value="dirt">Dirt Bike</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="rentalPrice" style="color:#1E3C72;">Rental Price (per day)</label>
+                    <input type="number" id="rentalPrice" name="rentalPrice" placeholder="e.g., 500">
+                </div>
+                <div class="form-group">
+                    <label for="location" style="color:#1E3C72;">Location</label>
+                    <input type="text" id="location" name="location" placeholder="e.g., Kolkata">
+                </div>
+                <div class="form-group">
+                    <label for="bikeDetails" style="color:#1E3C72;">Bike Details</label>
+                    <textarea id="bikeDetails" name="bikeDetails" rows="3" placeholder="Provide additional details about the bike"></textarea>
+                </div>
+                <button type="submit" class="book-button">Post Bike</button>
+            </form>
+        </div>
+
+        <!-- Available Bikes List -->
+        <div class="bike-list">
+            <h2>Available Bikes for Rent</h2>
+            <div class="bike-item">
+                <img src="royalenfield.webp" alt="Bike 1">
+                <div class="bike-details">
+                    <h3>Royal Enfield Classic 350</h3>
+                    <p>Type: Cruiser</p>
+                    <p>Location: Kolkata</p>
+                    <p>Price: ₹500/day</p>
+                    <p>Details: Well-maintained bike, ideal for long rides.</p>
+                </div>
+                <button class="book-button">Book Now</button>
+            </div>
+            <div class="bike-item">
+                <img src="honda.webp" alt="Bike 2">
+                <div class="bike-details">
+                    <h3>Honda Activa 6G</h3>
+                    <p>Type: Scooter</p>
+                    <p>Location: Kolkata</p>
+                    <p>Price: ₹300/day</p>
+                    <p>Details: Perfect for city rides and daily commuting.</p>
+                </div>
+                <button class="book-button">Book Now</button>
+            </div>
+            <!-- Additional bike items can be added here -->
+        </div>
+
+    </div>
+
+</body>
+</html>
