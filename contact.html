@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Developers</title>
+    <style>
+        header {
+            background-color: #02011d;
+            color: #4c22cb;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .brand {
+            color: rgb(96, 16, 194);
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin-left: 20px;
+        }
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1E3C72, #2A5298); /* Royal blue gradient background */
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #161616;
+        }
+        .containers {
+            display: flex;
+            overflow-x: auto; 
+            scroll-snap-type: x mandatory; 
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #b5c3dc;
+        }
+        .developer {
+            flex: 0 0 auto;
+            width: 300px; 
+            margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            scroll-snap-align: start; 
+        }
+        .developer h2 {
+            color: #1E3C72;
+        }
+        .contact {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #02011d;
+            color: #2A5298;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="zIppy.jpg" alt="zIppy Logo" class="logo">
+        <span class="brand">zIppy</span>
+        <nav class="container"></nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="list a bike.html">List/Book</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Website Developers</h1>
+
+    <div class="containers">
+        <div class="developer">
+            <h2>Monal Podder</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad consequuntur eum provident vero molestiae nesciunt veritatis magni neque perferendis aspernatur nihil sequi, laudantium nostrum maxime obcaecati enim vitae doloribus dolorum.</p>
+            <div class="contact">
+                <strong>Email:</strong> <a href="monalpodder12@gmail.com">monalpodder12@gmail.com</a><br>
+                <strong>Phone:</strong> 8617439264
+            </div>
+        </div>
+
+        <div class="developer">
+            <h2>Kousik RuiDas</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, voluptatum commodi vero eos illum veritatis labore, aliquid hic aperiam mollitia sint! In, consectetur minus nobis incidunt maxime beatae omnis laboriosam?</p>
+            <div class="contact">
+                <strong>Email:</strong> <a href="xyz@gmail.com">xyz@gmail.com</a><br>
+                <strong>Phone:</strong> 6546248376
+            </div>
+        </div>
+
+        <div class="developer">
+            <h2>Priya Das</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque autem a amet, praesentium distinctio voluptates minima dolorem doloremque. Provident et aut dolorum molestiae sunt labore nobis itaque fuga porro nemo.</p>
+            <div class="contact">
+                <strong>Email:</strong> <a href="xyz@gmail.com">xyz@gmail.com</a><br>
+                <strong>Phone:</strong> 6546248376
+            </div>
+        </div>
+
+        <div class="developer">
+            <h2>Tanusree Saha</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem non totam praesentium sequi esse eos laboriosam excepturi et quam quas? Minus labore unde numquam consectetur quis alias necessitatibus sequi? Saepe?</p>
+            <div class="contact">
+                <strong>Email:</strong> <a href="xyz@gmail.com">xyz@gmail.com</a><br>
+                <strong>Phone:</strong> 6546248376
+            </div>
+        </div>
+
+        <div class="developer">
+            <h2>Safiur Rahaman Laskar</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, esse amet. Sit, obcaecati vitae reprehenderit quaerat, vel necessitatibus commodi voluptatum unde iusto optio deserunt minus facilis laborum sunt nam velit.</p>
+            <div class="contact">
+                <strong>Email:</strong> <a href="xyz@gmail.com">xyz@gmail.com</a><br>
+                <strong>Phone:</strong> 6546248376
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 BikeRent. All rights reserved.</p>
+    </footer>
+</body>
+</html>
