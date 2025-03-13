@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1E3C72, #2A5298);
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #b5c3dc;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #1E3C72;
+        }
+        .details {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .details p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .pay-button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 20px;
+        }
+        .pay-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Parcel Booking Confirmed!</h2>
+        <p>Your parcel details have been recorded. Please review them before proceeding to payment.</p>
+        
+        <div class="details">
+            <p><strong>Pickup Location:</strong> <span id="pickup"></span></p>
+            <p><strong>Delivery Location:</strong> <span id="delivery"></span></p>
+            <p><strong>Parcel Type:</strong> <span id="parcel"></span></p>
+            <p><strong>Contact Number:</strong> <span id="contact"></span></p>
+        </div>
+
+        <button class="pay-button" onclick="proceedToPayment()">Proceed to Payment</button>
+    </div>
+
+    <script>
+        // Function to extract query parameters
+        function getQueryParams() {
+            let params = new URLSearchParams(window.location.search);
+            return {
+                pickup: params.get("pickup"),
+                delivery: params.get("delivery"),
+                parcel: params.get("parcel"),
+                contact: params.get("contact")
+            };
+        }
+
+        // Display parcel details
+        let details = getQueryParams();
+        document.getElementById("pickup").textContent = details.pickup || "Not provided";
+        document.getElementById("delivery").textContent = details.delivery || "Not provided";
+        document.getElementById("parcel").textContent = details.parcel || "Not provided";
+        document.getElementById("contact").textContent = details.contact || "Not provided";
+
+        // Redirect to payment page with parcel details
+        function proceedToPayment() {
+            window.location.href = `payment.html?pickup=${encodeURIComponent(details.pickup)}&delivery=${encodeURIComponent(details.delivery)}&parcel=${encodeURIComponent(details.parcel)}&contact=${encodeURIComponent(details.contact)}`;
+        }
+    </script>
+
+</body>
+</html>

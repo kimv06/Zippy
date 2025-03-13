@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bike Rental System - Signup</title>
+    <title>Bike Rental System - Login</title>
     <link rel="stylesheet" href="signupstyles.css">
     <script>
         function validateForm(event) {
             event.preventDefault(); // Always prevent default form submission
     
-            // Get all input fields                                     
+            // Get all input fields
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
@@ -19,7 +19,7 @@
             if (!name || !email || !password || !phone) {
                 alert('Please fill in all fields.');
             } else {
-                // If validation passes, redirect to roleselection.html
+                // If validation passes, redirect to home.html
                 window.location.href = 'roleselection.html';
             }
         }
@@ -27,12 +27,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>Sign Up for Bike Rental</h1>
-        <form action="roleselection.html" method="POST" onsubmit="validateForm(event)">
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
-            </div>
+        <h1>Login to Bike Rental</h1>
+        <form action="roleselection.html" method="GET" onsubmit="validateLoginForm(event)">
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
@@ -41,13 +37,10 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
             </div>
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
-            </div>
-            <button type="submit" class="signup-button">Sign Up</button>
+            <button type="submit" class="signup-button">Login</button>
+            <p><a href="forgotpassword.html">Forgot Password?</a></p>
         </form>
-        <p>Already have an account? <a href="login.html">Login here</a></p>
+        <p>Don't have an account? <a href="index.html">Sign up here</a></p>
     </div>
 </body>
 </html>

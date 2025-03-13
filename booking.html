@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Booking Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1E3C72, #2A5298);
+            color: #fff;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .details {
+            text-align: left;
+            margin: 20px;
+            font-size: 18px;
+        }
+        .confirm-button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .confirm-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Booking Confirmed!</h2>
+        <p>Your bike has been successfully booked.</p>
+        <div class="details">
+            <p><strong>Bike Name:</strong> <span id="bikeName"></span></p>
+            <p><strong>Type:</strong> <span id="bikeType"></span></p>
+            <p><strong>Location:</strong> <span id="location"></span></p>
+            <p><strong>Price:</strong> <span id="price"></span></p>
+        </div>
+        <button class="confirm-button" onclick="proceedToPayment()">Proceed to Payment</button>
+    </div>
+
+    <script>
+        // Function to extract URL parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Set the bike details from URL parameters
+        document.getElementById("bikeName").textContent = getQueryParam("bikeName");
+        document.getElementById("bikeType").textContent = getQueryParam("bikeType");
+        document.getElementById("location").textContent = getQueryParam("location");
+        document.getElementById("price").textContent = getQueryParam("price");
+
+        function proceedToPayment() {
+            window.location.href = "payment.html";
+        }
+    </script>
+
+</body>
+</html>

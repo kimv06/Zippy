@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Role Selection</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f3f4f6;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .customer-button {
+            background-color: #3b82f6;
+        }
+        .customer-button:hover {
+            background-color: #2563eb;
+        }
+        .driver-button {
+            background-color: #10b981;
+        }
+        .driver-button:hover {
+            background-color: #059669;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select Your Role</h1>
+    <div class="button-container">
+        <button class="customer-button" onclick="handleSelection('customer')">I'm a Customer</button>
+        <button class="driver-button" onclick="handleSelection('driver')">I'm a Driver</button>
+    </div>
+
+    <script>
+        function handleSelection(role) {
+            if (role === "customer") {
+                window.location.href = "home.html";
+            } else if (role === "driver") {
+                window.location.href = "/driver-home";
+            }
+        }
+    </script>
+</body>
+</html>

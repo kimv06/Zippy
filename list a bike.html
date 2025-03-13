@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List a bike</title>
     <link rel="stylesheet" href="styless.css">
+    <script>
+        function bookBike(bikeName, bikeType, location, price) {
+            const queryString = `booking.html?bikeName=${encodeURIComponent(bikeName)}&bikeType=${encodeURIComponent(bikeType)}&location=${encodeURIComponent(location)}&price=${encodeURIComponent(price)}`;
+            window.location.href = queryString;
+        }
+    </script>
 </head>
 <body>
 
@@ -72,7 +78,7 @@
                     <p>Price: ₹500/day</p>
                     <p>Details: Well-maintained bike, ideal for long rides.</p>
                 </div>
-                <button class="book-button">Book Now</button>
+                <button class="book-button" onclick="bookBike('Royal Enfield Classic 350', 'Cruiser', 'Kolkata', '₹500/day')">Book Now</button>
             </div>
             <div class="bike-item">
                 <img src="honda.webp" alt="Bike 2">
@@ -83,7 +89,7 @@
                     <p>Price: ₹300/day</p>
                     <p>Details: Perfect for city rides and daily commuting.</p>
                 </div>
-                <button class="book-button">Book Now</button>
+                <button class="book-button" onclick="bookBike('Honda Activa 6G', 'Scooter', 'Kolkata', '₹300/day')">Book Now</button>
             </div>
             <!-- Additional bike items can be added here -->
         </div>

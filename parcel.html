@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcel Delivery</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-color: #f4f4f4; */
+    background: linear-gradient(135deg, #1E3C72, #2A5298); /* Royal blue gradient background */
+    color: #333;
+}
+.header {
+    background-color:  #02011d;
+    color: #4c22cb;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+.contains {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.nav-links li {
+    margin-left: 20px;
+}
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+}
+.owner-form, .bike-list {
+    background-color: #b5c3dc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+.owner-form h2, .bike-list h2 {
+    margin-top: 0;
+    color: #1E3C72;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+.bike-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.bike-item img {
+    width: 100px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 8px;
+}
+.bike-details {
+    flex: 1;
+}
+.bike-details h3 {
+    margin: 0;
+    color: #1E3C72;
+}
+.book-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.book-button:hover {
+    background-color: #218838;
+}
+footer {
+    background-color: #02011d;
+    color: #2A5298;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <img src="zIppy.jpg" alt="Logo" class="logo">
+        <h1>Parcel Delivery</h1>
+        <div class="contains">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="list a bike.html">List/Book</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="owner-form">
+            <h2>Send or Receive Parcel</h2>
+            <!-- <form>
+                <div class="form-group">
+                    <label for="pickup">Pickup Location</label>
+                    <input type="text" id="pickup" name="pickup" placeholder="Enter pickup address" required>
+                </div>
+                <div class="form-group">
+                    <label for="delivery">Delivery Location</label>
+                    <input type="text" id="delivery" name="delivery" placeholder="Enter delivery address" required>
+                </div>
+                <div class="form-group">
+                    <label for="parcel">Parcel Type</label>
+                    <input type="text" id="parcel" name="parcel" placeholder="e.g., Documents, Food, Electronics"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact Number</label>
+                    <input type="tel" id="contact" name="contact" placeholder="Enter your contact number" required>
+                </div>
+                <button type="submit" class="book-button">Confirm Booking</button>
+            </form> -->
+            <form onsubmit="redirectToBooking(event)">
+                <div class="form-group">
+                    <label for="pickup">Pickup Location</label>
+                    <input type="text" id="pickup" name="pickup" placeholder="Enter pickup address" required>
+                </div>
+                <div class="form-group">
+                    <label for="delivery">Delivery Location</label>
+                    <input type="text" id="delivery" name="delivery" placeholder="Enter delivery address" required>
+                </div>
+                <div class="form-group">
+                    <label for="parcel">Parcel Type</label>
+                    <input type="text" id="parcel" name="parcel" placeholder="e.g., Documents, Food, Electronics" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact Number</label>
+                    <input type="tel" id="contact" name="contact" placeholder="Enter your contact number" required>
+                </div>
+                <button type="submit" class="book-button">Confirm Booking</button>
+            </form>
+            
+            <script>
+                function redirectToBooking(event) {
+                    event.preventDefault(); // Prevent form submission
+            
+                    // Get input values
+                    let pickup = document.getElementById("pickup").value;
+                    let delivery = document.getElementById("delivery").value;
+                    let parcel = document.getElementById("parcel").value;
+                    let contact = document.getElementById("contact").value;
+            
+                    // Redirect to bookingtoto.html with query parameters
+                    window.location.href = `bookingtoto.html?pickup=${encodeURIComponent(pickup)}&delivery=${encodeURIComponent(delivery)}&parcel=${encodeURIComponent(parcel)}&contact=${encodeURIComponent(contact)}`;
+                }
+            </script>
+            
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Parcel Delivery. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>

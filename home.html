@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zIppy</title>
+    <style>
+        header {
+            background-color: #02011d;
+            color: #4c22cb;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .brand {
+            color: rgb(96, 16, 194);
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1E3C72, #2A5298);
+            color: #333;
+        }
+
+        .hero-content {
+            background-color: #b5c3dc;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #2A5298;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #e64a19;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+        }
+
+        .feature {
+            flex-basis: 30%;
+            background-color: #b5c3dc;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .feature i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .hero-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .Bot {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #02011d;
+            color: #2A5298;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="zIppy.jpg" alt="zIppy Logo" class="logo">
+        <span class="brand">zIppy</span>
+        <nav class="container"></nav>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="list a bike.html">List/Book</a></li>
+            <!-- <li><a href="#about">About</a></li> -->
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </nav>
+    </header>
+    <section style="margin-top: 60px;"></section>
+    <div class="hero-content">
+        <div class="hero-header">
+            <h1>Rent a Bike for Your Urban Adventure</h1>
+            <a href="chatchat.html"><img src="chatbot.jpg" class="Bot"></a>
+        </div>
+        <p>Explore the city on two wheels with our premium bike rentals</p>
+        <a href="list a bike.html" class="cta-button">Add / Book Bikes</a>
+        <a href="parcel.html" class="cta-button">Send / Receive Parcel</a>
+        <a href="toto.html" class="cta-button">Book Toto</a>
+    </div>
+    </section>
+    <section class="features">
+        <div class="feature">
+            <i class="fas fa-bicycle"></i>
+            <h2>Wide Selection</h2>
+            <p>Choose from our variety of high-quality bikes</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-map-marked-alt"></i>
+            <h2>Convenient Locations</h2>
+            <p>Pick up and drop off at multiple city locations</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-shield-alt"></i>
+            <h2>Safety First</h2>
+            <p>All bikes are regularly maintained and sanitized</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 BikeRent. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

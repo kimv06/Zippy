@@ -1,0 +1,285 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Rental Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .chat-container {
+            width: 300px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .chat-box {
+            height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        .user-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <h2>Bike Rental Chatbot</h2>
+        <div class="chat-box" id="chat-box"></div>
+        <input type="text" class="user-input" id="user-input" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+    </div>
+
+    <script>
+        const responses = {
+            "hello": "Hello! Welcome to our bike rental service. How can I assist you?",
+            "hi": "Hello! Welcome to our bike rental service. How can I assist you?",
+            "available bikes": "We have mountain bikes, road bikes, and electric bikes available.",
+            "pricing": "Our bike rental starts at $10 per hour. Discounts available for full-day rentals!",
+            "rental duration": "You can rent a bike for an hour, a day, or even a week!",
+            "bye": "Goodbye! Have a great ride!"
+        };
+
+        function addMessage(sender, message) {
+            const chatBox = document.getElementById("chat-box");
+            const msgElement = document.createElement("p");
+            msgElement.textContent = `${sender}: ${message}`;
+            chatBox.appendChild(msgElement);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function handleUserInput() {
+            const inputField = document.getElementById("user-input");
+            const userMessage = inputField.value.toLowerCase().trim();
+            if (userMessage === "") return;
+            
+            addMessage("You", userMessage);
+            
+            let botResponse = responses[userMessage] || "I'm sorry, I don't understand. Please ask about bike rentals.";
+            setTimeout(() => addMessage("Bot", botResponse), 500);
+            
+            inputField.value = "";
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+                handleUserInput();
+            }
+        }
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Rental Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1E3C72, #2A5298);
+            color: #333;
+            text-align: center;
+        }
+        .chat-container {
+            width: 90%;
+            max-width: 400px;
+            margin: 50px auto;
+            background: #b5c3dc;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #1E3C72;
+            margin-bottom: 10px;
+        }
+        .chat-box {
+            height: 250px;
+            overflow-y: auto;
+            border: 2px solid #1E3C72;
+            padding: 10px;
+            text-align: left;
+            border-radius: 5px;
+            background-color: white;
+        }
+        .user-input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #1E3C72;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .send-button, .voice-button, .upload-button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        .send-button:hover, .voice-button:hover, .upload-button:hover {
+            background-color: #218838;
+        }
+        .predefined-questions {
+            margin-top: 15px;
+            text-align: left;
+        }
+        .predefined-questions p {
+            font-weight: bold;
+            color: #1E3C72;
+        }
+        .question-button {
+            display: block;
+            width: 100%;
+            background-color: #4c22cb;
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px 0;
+            text-align: center;
+            transition: background 0.3s;
+        }
+        .question-button:hover {
+            background-color: #2A5298;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-container">
+        <h2>Bike Rental Chatbot</h2>
+        <div class="chat-box" id="chat-box"></div>
+        <input type="text" class="user-input" id="user-input" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+        <button class="send-button" onclick="handleUserInput()">Send</button>
+        <button class="voice-button" onclick="startVoiceInput()">🎙️ Voice Input</button>
+        <!-- <button class="upload-button" onclick="uploadID()">📸 Upload ID Proof</button> -->
+        <input type="file" id="file-upload" class="hidden" accept="image/png, image/jpeg, application/pdf" onchange="handleFileUpload()">
+        <button class="upload-button" onclick="document.getElementById('file-upload').click();">📸 Upload ID Proof</button>
+
+        <div class="predefined-questions">
+            <p>Quick Questions:</p>
+            <button class="question-button" onclick="askQuestion('check availability')">Check Bike Availability</button>
+            <button class="question-button" onclick="askQuestion('nearest location')">Find Nearest Rental</button>
+            <button class="question-button" onclick="askQuestion('payment methods')">Payment Options</button>
+            <button class="question-button" onclick="askQuestion('rental terms')">Rental Terms</button>
+            <button class="question-button" onclick="askQuestion('report issue')">Report an Issue</button>
+            <button class="question-button" onclick="askQuestion('connect support')">Connect to Support</button>
+        </div>
+    </div>
+
+    <script>
+        const responses = {
+            "hello": "Hello! Welcome to our bike rental service. How can I assist you?",
+            "hi": "Hello! Welcome to our bike rental service. How can I assist you?",
+            "check availability": "Please enter the date you want to rent a bike (e.g., 'check availability for March 10').",
+            "nearest location": "Please enter your city name, and I'll find the nearest rental spot for you.",
+            "payment methods": "We accept credit cards, debit cards, UPI, and PayPal.",
+            "rental terms": "All bikes must be returned within the rental period. Late returns may incur additional charges.",
+            "report issue": "Please describe the issue you're facing with the rented bike.",
+            "connect support": "Connecting you to customer support... 📞 Call +123456789 or email support@bikerentals.com",
+            "bye": "Goodbye! Have a great ride!"
+        };
+
+        function addMessage(sender, message) {
+            const chatBox = document.getElementById("chat-box");
+            const msgElement = document.createElement("p");
+            msgElement.textContent = `${sender}: ${message}`;
+            chatBox.appendChild(msgElement);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function handleUserInput() {
+            const inputField = document.getElementById("user-input");
+            const userMessage = inputField.value.toLowerCase().trim();
+            if (userMessage === "") return;
+
+            addMessage("You", userMessage);
+
+            if (userMessage.includes("check availability for")) {
+                addMessage("Bot", "Checking availability for your date... ✅ Bikes available!");
+                return;
+            } else if (userMessage.includes("nearest rental in")) {
+                addMessage("Bot", "Finding the nearest rental spot... 📍 Located at 123 Main Street.");
+                return;
+            }
+
+            let botResponse = responses[userMessage] || "I'm sorry, I don't understand. Please ask about bike rentals.";
+            setTimeout(() => addMessage("Bot", botResponse), 500);
+
+            inputField.value = "";
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+                handleUserInput();
+            }
+        }
+
+        function askQuestion(question) {
+            document.getElementById("user-input").value = question;
+            handleUserInput();
+        }
+
+        function startVoiceInput() {
+            const recognition = new webkitSpeechRecognition() || new SpeechRecognition();
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript;
+                document.getElementById("user-input").value = transcript;
+                handleUserInput();
+            };
+            recognition.start();
+        }
+
+        // function uploadID() {
+        //     alert("Redirecting to ID upload page...");
+        //     // You can implement file upload functionality here.
+        // }
+        function handleFileUpload() {
+            const fileInput = document.getElementById("file-upload");
+            const filePreview = document.getElementById("file-preview");
+            const previewImg = document.getElementById("preview-img");
+            const fileName = document.getElementById("file-name");
+
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                fileName.textContent = `File: ${file.name}`;
+
+                if (file.type.startsWith("image/")) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        previewImg.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                    previewImg.style.display = "block";
+                } else {
+                    previewImg.style.display = "none";
+                }
+
+                filePreview.style.display = "block";
+                addMessage("Bot", "✅ ID proof uploaded successfully!");
+            }
+        }
+    </script>
+
+</body>
+</html>

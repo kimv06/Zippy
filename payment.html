@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1E3C72, #2A5298);
+            color: white;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .details {
+            text-align: left;
+            margin: 20px;
+            font-size: 18px;
+        }
+        .payment-method {
+            text-align: left;
+            margin: 20px;
+        }
+        .pay-button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .pay-button:hover {
+            background-color: #218838;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Payment Details</h2>
+        <p>Please complete the payment to confirm your booking.</p>
+
+        <!-- <div class="details">
+            <p><strong>Bike Name:</strong> <span id="bikeName"></span></p>
+            <p><strong>Type:</strong> <span id="bikeType"></span></p>
+            <p><strong>Location:</strong> <span id="location"></span></p>
+            <p><strong>Price:</strong> ₹<span id="price"></span>/day</p>
+        </div> -->
+
+        <div class="payment-method">
+            <h3>Select Payment Method</h3>
+            <select id="paymentMethod">
+                <option value="credit">Credit/Debit Card</option>
+                <option value="upi">UPI</option>
+                <option value="netbanking">Net Banking</option>
+            </select>
+            <input type="text" id="paymentDetails" placeholder="Enter Card/UPI ID" required>
+        </div>
+
+        <button class="pay-button" onclick="completePayment()">Pay Now</button>
+    </div>
+
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Set bike details from URL
+        document.getElementById("bikeName").textContent = getQueryParam("bikeName");
+        document.getElementById("bikeType").textContent = getQueryParam("bikeType");
+        document.getElementById("location").textContent = getQueryParam("location");
+        document.getElementById("price").textContent = getQueryParam("price");
+
+        function completePayment() {
+            alert("Payment successful! Your bike is booked.");
+            window.location.href = "home.html"; // Redirects to home after payment
+        }
+    </script>
+
+</body>
+</html>
